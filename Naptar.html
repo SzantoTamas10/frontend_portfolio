@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naptár</title>
+    <link rel="stylesheet" href="Naptarstyle.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="header">
+            <button onclick="prevMonth()">❮</button>
+            <h2 id="monthYear"></h2>
+            <button onclick="nextMonth()">❯</button>
+        </div>
+        <div class="weekdays">
+            <div>H</div>
+            <div>K</div>
+            <div>Sze</div>
+            <div>Cs</div>
+            <div>P</div>
+            <div>Szo</div>
+            <div>V</div>
+        </div>
+        <div class="days" id="calendarDays"></div>
+    </div>
+    <script src="Naptarscript.js"></script>
+</body>
+</html>

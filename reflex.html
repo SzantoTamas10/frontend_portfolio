@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reakcióidő mérő</title>
+    <link rel="stylesheet" href="refstyle.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Reakcióidő Mérő</h1>
+        <p id="reaction-time">Reakcióidő: 0 ms</p>
+        <p id="result"></p>
+
+        <!-- Stopper idő -->
+        <p id="stopwatch">Idő: 0.0</p>
+
+        <!-- Próbálkozások száma -->
+        <p id="attempts">Próbálkozások: 0</p>
+
+        <div class="game-inner">
+            <div class="traffic-light">
+                <div id="red" class="light"></div>
+                <div id="yellow" class="light"></div>
+                <div id="green" class="light"></div>
+            </div>
+
+            <div class="results-container">
+                <h3>Eredmények:</h3>
+                <ul id="results-list">
+                    <!-- Az eredmények itt jelennek meg -->
+                </ul>
+            </div>
+        </div>
+
+        <button id="startButton">Játék indítása (S)</button>
+        <button id="clickButton" disabled>Várj a zöld lámpára...</button>
+    </div>
+
+    <script src="reflex.js"></script>
+</body>
+</html>

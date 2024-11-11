@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sötét/Világos Mód</title>
+    <link href="https://fonts.googleapis.com/css2?family=Star+Jedi&display=swap" rel="stylesheet">
+    <style>
+        /* Alap stílusok */
+        body {
+            margin: 0;
+            font-family: 'Star Jedi', sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s ease;
+        }
+
+        /* Bal oldal (világos) */
+        .left {
+            background-color: #f0f0f0;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Jobb oldal (sötét) */
+        .right {
+            background-color: #111;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f0f0f0;
+            transition: background-color 0.5s ease;
+        }
+
+        /* A csúszka stílusai */
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* Csúszka pozíciója */
+        .slider:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        /* Ha a csúszka a jobb oldalon van */
+        .slider.move-right:before {
+            left: calc(100% - 50px); /* A csúszka a képernyő jobb szélére mozdul */
+        }
+
+        /* További stílusok */
+        h1 {
+            font-size: 2em;
+            color: inherit;
+        }
+        .dark-mode .left {
+            background-color: #111;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .right {
+            background-color: #f0f0f0;
+            color: #111;
+        }
+
+        /* Kép stílusok */
+        .mode-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Bal oldal (világos mód) -->
+        <div class="left">
+            <div>
+                <h1 id="modeText">Világos mód</h1>
+                <img src="Ani.webp" id="modeImage" class="mode-image" alt="Világos mód kép">
+            </div>
+        </div>
+
+        <!-- Jobb oldal (sötét mód) -->
+        <div class="right">
+            <div>
+                <h1 id="modeText2">Sötét mód</h1>
+                <img src="vader.jpg" id="modeImage2" class="mode-image" alt="Sötét mód kép">
+            </div>
+        </div>
+    </div>
+
+    <!-- A csúszka, amivel válthatunk -->
+    <div class="slider" onclick="toggleMode()"></div>
+    <script>
+        // A csúszka átváltása
+        function toggleMode() {
+            const slider = document.querySelector('.slider');
+            const container = document.querySelector('.container');
+            const left = document.querySelector('.left');
+            const right = document.querySelector('.right');
+            const modeText = document.getElementById('modeText');
+            const modeText2 = document.getElementById('modeText2');
+            const modeImage = document.getElementById('modeImage');
+            const modeImage2 = document.getElementById('modeImage2');
+
+            // Ha a csúszka a jobb oldalra kerül, a háttérszínek változnak
+            slider.classList.toggle('move-right');
+            container.classList.toggle('dark-mode');
+
+            // A háttér színének változtatása
+            if (container.classList.contains('dark-mode')) {
+                left.style.backgroundColor = '#111';
+                right.style.backgroundColor = '#f0f0f0';
+                left.style.color = '#f0f0f0';
+                right.style.color = '#111';
+                modeText.textContent = 'Sötét mód';  // A bal oldali felirat cserélése
+                modeText2.textContent = 'Világos mód'; // A jobb oldali felirat cserélése
+
+                // Kép cseréje
+                modeImage.src = 'vader.jpg';
+                modeImage2.src = 'Ani.webp';
+            } else {
+                left.style.backgroundColor = '#f0f0f0';
+                right.style.backgroundColor = '#111';
+                left.style.color = '#333';
+                right.style.color = '#f0f0f0';
+                modeText.textContent = 'Világos mód';  // A bal oldali felirat cserélése
+                modeText2.textContent = 'Sötét mód';  // A jobb oldali felirat cserélése
+
+                // Kép cseréje
+                modeImage.src = 'Ani.webp';
+                modeImage2.src = 'vader.jpg';
+            }
+        }
+    </script>
+</body>
+</html>

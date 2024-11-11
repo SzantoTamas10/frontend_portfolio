@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólió – Szántó Tamás Lajos</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script>
+        // JavaScript a dropdown menük kezelésére
+        function navigatePage(selectElement) {
+            const value = selectElement.value;
+            if (value) {
+                window.open(value, '_blank');
+            }
+        }
+    </script>
 </head>
 <body style="font-family:Verdana;color:#333;">
     <div class="content">
@@ -15,12 +24,27 @@
 
         <div style="overflow:auto;">
             <!-- Menü -->
-            <nav class="menu" style="background-color:#2c3e50;color:white;padding:10px;text-align:center;">
-                <a href="Calculator.html" style="color:white;margin:10px;" target="_blank">Számológép</a>
-                <a href="aknaKereso.html" style="color:white;margin:10px;" target="_blank">Aknakereső</a>
-                <a href="shoppingList.html" style="color:white;margin:10px;" target="_blank">Bevásárlólista</a>
-                <a href="Naptar.html" style="color:white;margin:10px;" target="_blank">Naptár</a>
-            </nav>
+            <div style="text-align:center;margin-top:20px;">
+                <label for="svelteFrontend">Svelte Frontend:</label>
+                <select id="svelteFrontend" name="svelteFrontend" style="padding:5px;">
+                    <option value="">Válassz projektet</option>
+                    <option value="https://svelte.dev">Svelte Projekt 1</option>
+                    <option value="https://svelte.dev">Svelte Projekt 2</option>
+                    <option value="https://svelte.dev">Svelte Projekt 3</option>
+                </select>
+
+                <label for="alapFrontend" style="margin-left:20px;">Alap Frontend:</label>
+                <select id="alapFrontend" name="alapFrontend" style="padding:5px;" onchange="navigatePage(this)">
+                    <option value="">Válassz egy projektet</option>
+                    <option value="aknaKereso.html">Aknakereső</option>
+                    <option value="pong.html">Atari pingpong játék</option>
+                    <option value="shoppingList.html">Bevásárlólista</option>
+                    <option value="Naptar.html">Naptár</option>
+                    <option value="reflex.html">Reflex játék</option>
+                    <option value="Calculator.html">Számológép</option>
+                    <option value="dark.html">Világos/Sötét mód</option>
+                </select>
+            </div>
 
             <!-- Tartalom -->
             <div class="main" style="padding:15px;">
@@ -28,11 +52,25 @@
                 <p>Üdvözöllek a portfólió oldalamon! Itt találhatóak a webfejlesztés tantárgy keretében készített projektjeim.</p>
                 
                 <h2>Projektek</h2>
-                <ul>
-                    <li><strong>Számológép</strong>: Egyszerű számológép HTML, CSS és JavaScript segítségével.</li>
+                <h3>Alap Frontend projektek (HTML, CSS, JavaScript nyelvek használatával)</h3>
+                <ul>  
                     <li><strong>Aknakereső</strong>: A klasszikus aknakereső játék böngészőben futó változata.</li>
+                    <li><strong>Atari pingpong játék</strong>: A klasszikus pingpong játék</li>                    
                     <li><strong>Bevásárlólista</strong>: Interaktív bevásárlólista alkalmazás, amellyel tételeket adhatunk hozzá, távolíthatunk el vagy jelölhetünk meg késznek.</li>
                     <li><strong>Naptár</strong>: Naptár alkalmazás.</li>
+                    <li><strong>Reflex játék</strong>: Reflex játék az egyszerűség kedvéért.</li>
+                    <li><strong>Számológép</strong>: Egyszerű számológép HTML, CSS és JavaScript segítségével.</li>
+                    <li><strong>Világos/sötét mód</strong>: A világos és sötét mó váltása.</li>
+                    <br>
+                 <strong>Az oldalakat a menüből lehet kiválasztani</strong>
+                </ul>
+                <h3>Svelte projektek</h3>
+                <ul>
+                    <li><strong>Még</strong></li>
+                    <li><strong>folyamatban</strong></li>
+                    <li><strong>vannak</strong></li>
+                    <li><strong></strong></li>
+                    <li><strong></strong></li>
                 </ul>
             </div>
 

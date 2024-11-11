@@ -1,0 +1,127 @@
+/* styles.css */
+
+/* Alap beállítások */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2c3e50; /* Sötét háttér */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ecf0f1; /* Világos szöveg */
+}
+
+.game-container {
+    text-align: center;
+    background: #34495e; /* Sötétebb kékesszürke háttér */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+#reaction-time, #stopwatch, #attempts {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #f39c12; /* Aranysárga szín */
+}
+
+#result {
+    font-size: 1.1rem;
+    color: #2ecc71; /* Zöld szín */
+    margin-top: 20px;
+}
+
+.game-inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.traffic-light {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 10px 0;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+}
+
+/* Színek a lámpákhoz */
+#red {
+    background-color: #e74c3c;
+}
+
+#yellow {
+    background-color: #f39c12;
+}
+
+#green {
+    background-color: #2ecc71;
+}
+
+.results-container {
+    text-align: left;
+    padding-left: 20px;
+    flex: 1;
+}
+
+.results-container h3 {
+    font-size: 1.5rem;
+    color: #ecf0f1;
+}
+
+#results-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#results-list li {
+    background-color: #16a085; /* Erősebb zöld */
+    color: white;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
